@@ -3,7 +3,11 @@ import React from 'react';
 import { SERVICES } from '../constants';
 import { ArrowRight } from 'lucide-react';
 
-const Services: React.FC = () => {
+interface ServicesProps {
+  onServiceClick: (id: string) => void;
+}
+
+const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
   return (
     <section id="storitve" className="py-24 bg-wood-900 text-wood-100 relative">
       {/* Texture Overlay */}
@@ -26,7 +30,8 @@ const Services: React.FC = () => {
           {SERVICES.map((service, index) => (
             <div 
               key={service.id} 
-              className="group relative bg-wood-800 border border-wood-700 hover:border-wood-500 transition-all duration-500 overflow-hidden"
+              onClick={() => onServiceClick(service.id)}
+              className="group relative bg-wood-800 border border-wood-700 hover:border-wood-500 transition-all duration-500 overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl hover:-translate-y-1"
             >
               <div className="aspect-[4/3] overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
                  <img 
@@ -37,7 +42,7 @@ const Services: React.FC = () => {
               </div>
               
               <div className="p-8 relative">
-                <div className="absolute -top-8 right-8 w-16 h-16 bg-wood-300 text-wood-900 flex items-center justify-center shadow-lg group-hover:bg-white transition-colors duration-300">
+                <div className="absolute -top-8 right-8 w-16 h-16 bg-wood-300 text-wood-900 flex items-center justify-center shadow-lg group-hover:bg-white transition-colors duration-300 rounded-sm">
                   <service.icon size={28} strokeWidth={1.5} />
                 </div>
                 
@@ -46,9 +51,9 @@ const Services: React.FC = () => {
                   {service.description}
                 </p>
                 
-                <a href="#kontakt" className="inline-flex items-center text-sm font-bold text-white uppercase tracking-wider group-hover:text-wood-300 transition-colors">
-                  Povpraševanje <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
+                <span className="inline-flex items-center text-sm font-bold text-white uppercase tracking-wider group-hover:text-wood-300 transition-colors">
+                  Več o tem <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
               </div>
             </div>
           ))}

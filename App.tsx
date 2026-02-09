@@ -15,6 +15,7 @@ type PageType = 'domov' | 'o-nas' | 'storitve' | 'galerija' | 'kontakt';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('domov');
+  const [targetServiceId, setTargetServiceId] = useState<string | null>(null);
 
   // Handle browser back/forward buttons (basic implementation)
   useEffect(() => {
@@ -37,8 +38,20 @@ function App() {
   const navigateTo = (page: string) => {
     const validPage = page as PageType;
     setCurrentPage(validPage);
+    
+    // If we are navigating to something other than services, reset the target service
+    // This ensures if they click "Services" in menu later, they get the list view
+    if (validPage !== 'storitve') {
+      setTargetServiceId(null);
+    }
+
     window.location.hash = page;
     window.scrollTo(0, 0);
+  };
+
+  const handleServiceClick = (serviceId: string) => {
+    setTargetServiceId(serviceId);
+    navigateTo('storitve');
   };
 
   return (
@@ -51,7 +64,7 @@ function App() {
             <Hero onContactClick={() => navigateTo('kontakt')} />
             {/* Home shows previews of other sections */}
             <About />
-            <Services /> {/* This is the summary version from original design */}
+            <Services onServiceClick={handleServiceClick} /> 
             {/* Gallery Preview removed as requested */}
           </>
         )}
@@ -61,7 +74,7 @@ function App() {
         )}
 
         {currentPage === 'storitve' && (
-          <ServicesPage />
+          <ServicesPage initialServiceId={targetServiceId} />
         )}
 
         {currentPage === 'galerija' && (
