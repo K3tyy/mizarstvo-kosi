@@ -15,17 +15,11 @@ export const TEAM: TeamMember[] = [
     id: 1,
     name: 'Kristjan Kosi',
     role: 'Ustanovitelj & Glavni mizar',
-    image: 'https://images.unsplash.com/photo-1540560485458-3473b2f6dff3?q=80&w=800&auto=format&fit=crop'
-  },
-  {
-    id: 2,
-    name: 'Matija Kosi',
-    role: 'Strokovna montaža',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop'
   },
   {
-    id: 3,
-    name: 'Tadej Kosi',
+    id: 2,
+    name: 'Jože Kosi',
     role: 'Strokovna montaža',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop'
   }
@@ -39,7 +33,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription: 'Kuhinja je srce doma, kjer se ustvarjajo spomini. Nudimo celovito rešitev – od svetovanja in 3D izrisa do natančne izdelave in montaže. Specializirani smo za moderne linije brez ročajev, rustikalne stile in inovativne rešitve za majhne prostore. Uporabljamo le najboljša okovja (Blum) in materiale, odporne na vlago in vročino.',
     benefits: ['Brezplačen 3D izris in svetovanje', 'Doživljenjska garancija na okovje Blum', 'Odporni pulti (Kerrock, Granit, Compact)', 'Popoln izkoristek kotov in predalov'],
     icon: ChefHat,
-    image: 'slike/belakuhinja1.JPG'
+    image: 'slike/belakuhinja1.jpg'
   },
   {
     id: 'omare',
@@ -75,7 +69,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription: 'Vrata so prvi stik z vašim prostorom. Izdelujemo masivna vhodna vrata z visoko varnostno in toplotno zaščito ter elegantna notranja vrata (furnirana, barvana, masivna). Posebej smo ponosni na naša vrata s skritimi nasadili in magnetnimi ključavnicami za minimalističen videz.',
     benefits: ['Vrhunska zvočna izolacija', 'Skrita nasadila in magnetne ključavnice', 'Izdelava nadsvetlob in stranskih svetlob', 'Unikatni dizajni in kombinacije s steklom'],
     icon: DoorOpen,
-    image: 'slike/vratazsteklom1.JPG'
+    image: 'slike/Vratazsteklom1.jpg'
   },
   {
     id: 'stopnice',
@@ -117,8 +111,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 export const GALLERY_IMAGES: ProjectImage[] = [
-  { id: 1, url: 'slike/belakuhinja.JPG', title: 'Moderna kuhinja', category: 'kuhinje' },
-  { id: 2, url: 'slike/belakuhinja1.JPG', title: 'Moderna kuhinja', category: 'kuhinje' },
+  { id: 1, url: 'slike/belakuhinja.jpg', title: 'Moderna kuhinja', category: 'kuhinje' },
+  { id: 2, url: 'slike/belakuhinja1.jpg', title: 'Moderna kuhinja', category: 'kuhinje' },
   { id: 3, url: 'slike/sivakuhinja.jpg', title: 'Moderna kuhinja', category: 'kuhinje' },
   { id: 4, url: 'slike/sivakuhinja1.jpg', title: 'Moderna kuhinja', category: 'kuhinje' },
   { id: 5, url: 'slike/sivakuhinja2.jpg', title: 'Moderna kuhinja', category: 'kuhinje' },
