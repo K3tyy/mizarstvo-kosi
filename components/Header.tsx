@@ -26,9 +26,11 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
     onNavigate(page);
   };
 
-  // Logic update: Text should be white at the top of ALL pages because they all have dark headers/heroes.
-  // It only becomes dark when scrolled or when the mobile menu is open.
-  const isDarkHeader = isScrolled || isOpen;
+  // Logic update: 
+  // - "Domov", "O nas", "Storitve": Dark headers/heroes -> White text at top.
+  // - "Galerija", "Kontakt": User requested dark menu (black text) because backgrounds are light/white.
+  const isLightPage = activePage === 'galerija' || activePage === 'kontakt';
+  const isDarkHeader = isScrolled || isOpen || isLightPage;
 
   return (
     <header 
