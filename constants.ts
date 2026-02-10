@@ -51,7 +51,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription: 'Jedilna miza je več kot le kos pohištva; je prostor, kjer se zbere družina. Izdelujemo masivne mize iz hrasta, oreha in jesena z možnostjo epoksi smol ali klasičnih oljenih premazov. Nudimo tudi pisalne mize, klubske mizice in konferenčne mize s kovinskim ali lesenim podnožjem po vaši želji.',
     benefits: ['Izbran masiven les (Hrast, Oreh, Jesen)', 'Unikatni naravni robovi ali ravne linije', 'Zaščita z vrhunskimi olji ali laki', 'Izdelava kovinskih podnožij po meri'],
     icon: Table,
-    image: 'slike/Okroglamiza1.jpeg'
+    image: 'slike/Okroglamiza1.webp'
   },
   {
     id: 'okna',
@@ -69,7 +69,7 @@ export const SERVICES: ServiceItem[] = [
     fullDescription: 'Vrata so prvi stik z vašim prostorom. Izdelujemo masivna vhodna vrata z visoko varnostno in toplotno zaščito ter elegantna notranja vrata (furnirana, barvana, masivna). Posebej smo ponosni na naša vrata s skritimi nasadili in magnetnimi ključavnicami za minimalističen videz.',
     benefits: ['Vrhunska zvočna izolacija', 'Skrita nasadila in magnetne ključavnice', 'Izdelava nadsvetlob in stranskih svetlob', 'Unikatni dizajni in kombinacije s steklom'],
     icon: DoorOpen,
-    image: 'slike/Vratazsteklom1.jpg'
+    image: 'slike/Vratazsteklom1.webp'
   },
   {
     id: 'stopnice',
@@ -125,7 +125,6 @@ export const GALLERY_IMAGES: ProjectImage[] = [
 
   { id: 12, url: 'slike/belaomara.jpg', title: 'Vgradni garderobni sistem', category: 'omare' },
   { id: 13, url: 'slike/Belaomara1.jpeg', title: 'Omara od tal do stropa', category: 'omare' },
-  { id: 14, url: 'slike/Belaomara2.png', title: 'Drsna vrata omare', category: 'omare' },
   { id: 15, url: 'slike/Belaomara3.jpeg', title: 'Notranja osvetlitev omare', category: 'omare' },
   { id: 16, url: 'slike/Rjavaomara1.jpg', title: 'Omara po meri', category: 'omare' },
   { id: 17, url: 'slike/Rjavaomara2.jpg', title: 'Omara po meri', category: 'omare' },  
@@ -133,15 +132,15 @@ export const GALLERY_IMAGES: ProjectImage[] = [
   { id: 20, url: 'slike/omara2.jpg', title: 'Omara po meri', category: 'omare' },  
   { id: 21, url: 'slike/omara3.jpg', title: 'Omara po meri', category: 'omare' },  
 
-  { id: 22, url: 'slike/Okroglamiza1.jpeg', title: 'Masivna hrastova miza', category: 'mize' },
-  { id: 23, url: 'slike/Okroglamiza2.jpeg', title: 'Okrogla miza po meri', category: 'mize' },
+  { id: 22, url: 'slike/Okroglamiza1.webp', title: 'Masivna hrastova miza', category: 'mize' },
+  { id: 23, url: 'slike/Okroglamiza2.webp', title: 'Okrogla miza po meri', category: 'mize' },
   { id: 24, url: 'slike/Okroglamiza3.jpeg', title: 'Miza z masivnim robom', category: 'mize' },
-  { id: 25, url: 'slike/Okroglamiza(robmize)4.jpeg', title: 'Detajl roba mize', category: 'mize' },
+  { id: 25, url: 'slike/Okroglamiza(robmize)4.webp', title: 'Detajl roba mize', category: 'mize' },
 
   { id: 26, url: 'slike/okna1.jpg', title: 'Lesena okna in police', category: 'okna' },
   { id: 27, url: 'slike/okna2.jpg', title: 'Notranje police', category: 'okna' },
 
-  { id: 31, url: 'slike/vrata1.jpg', title: 'Notranja vrata', category: 'vrata' },
+  { id: 31, url: 'slike/Vrata1.jpg', title: 'Notranja vrata', category: 'vrata' },
   { id: 32, url: 'slike/notranjastilnavrata.jpg', title: 'Stilna notranja vrata', category: 'vrata' },
   { id: 33, url: 'slike/notranjastilnavrata1.jpg', title: 'Bela notranja vrata', category: 'vrata' },
   { id: 34, url: 'slike/Starinskavrata1.jpg', title: 'Zunanja masivna vrata', category: 'vrata' },
