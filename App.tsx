@@ -78,15 +78,11 @@ function App() {
         )}
 
         {currentPage === 'galerija' && (
-          <div className="pt-20">
-             <Gallery isPreview={false} />
-          </div>
+          <Gallery isPreview={false} />
         )}
 
         {currentPage === 'kontakt' && (
-          <div className="pt-20">
-             <Contact />
-          </div>
+          <Contact />
         )}
       </main>
       

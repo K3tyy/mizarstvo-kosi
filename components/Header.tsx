@@ -26,11 +26,10 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
     onNavigate(page);
   };
 
-  // Logic update: 
-  // - "Domov", "O nas", "Storitve": Dark headers/heroes -> White text at top.
-  // - "Galerija", "Kontakt": User requested dark menu (black text) because backgrounds are light/white.
-  const isLightPage = activePage === 'galerija' || activePage === 'kontakt';
-  const isDarkHeader = isScrolled || isOpen || isLightPage;
+  // Simplified logic: 
+  // Header is transparent (White text) at top (scrollY = 0) because all pages start with dark backgrounds.
+  // Header is Glass/White (Dark text) when scrolled or when mobile menu is open.
+  const isDarkHeader = isScrolled || isOpen;
 
   return (
     <header 

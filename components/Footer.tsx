@@ -44,10 +44,20 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-wood-300/50 pt-8 flex flex-col-reverse md:flex-row justify-between items-center gap-6 md:gap-4">
-          <p className="text-wood-600 text-xs md:text-sm font-medium text-center md:text-left">
-            © {new Date().getFullYear()} MK Mizarstvo Kosi d.o.o. Vse pravice pridržane.
-          </p>
+        <div className="border-t border-wood-300/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left">
+            <p className="text-wood-600 text-xs md:text-sm font-medium">
+              © {new Date().getFullYear()} MK Mizarstvo Kosi d.o.o. Vse pravice pridržane.
+            </p>
+            <span className="hidden md:block text-wood-400">|</span>
+            <div className="text-wood-500 text-xs md:text-sm flex items-center justify-center md:justify-start gap-0.5">
+              <span className="whitespace-nowrap">Designed by</span>
+              <a href="#" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 transition-opacity block">
+                {/* Increased height to h-9 (36px) for better visibility without huge margins */}
+                <img src="slike/kevinlogo.webp" alt="Kevin" className="h-19 w-16 object-contain" />
+              </a>
+            </div>
+          </div>
           
           {/* Social Icons & Signature */}
           <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
