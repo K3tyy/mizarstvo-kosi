@@ -26,18 +26,23 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
     onNavigate(page);
   };
 
-  // Simplified logic: 
-  // Header is transparent (White text) at top (scrollY = 0) because all pages start with dark backgrounds.
-  // Header is Glass/White (Dark text) when scrolled or when mobile menu is open.
-  const isDarkHeader = isScrolled || isOpen;
+  // LOGIC:
+  // 1. Mobile Menu Open: White background, Dark text (to match the white dropdown).
+  // 2. Scrolled Down: Dark Glass background (defined here with Tailwind), White text.
+  // 3. At Top: Transparent background, White text.
+  
+  const getHeaderClass = () => {
+    if (isOpen) return 'bg-white border-wood-200 py-3 shadow-md'; // Mobile open
+    // Using bg-wood-900/80 (80% opacity dark wood) and backdrop-blur-xl for strong blur effect directly here
+    if (isScrolled) return 'bg-wood-900/80 backdrop-blur-xl border-white/10 py-3 shadow-lg'; // Scrolled
+    return 'bg-transparent border-transparent py-6'; // Top
+  };
+
+  const isDarkText = isOpen; // Only use dark text if mobile menu is open (white bg)
 
   return (
     <header 
-      className={`fixed w-full z-50 transition-all duration-500 border-b ${
-        isDarkHeader
-          ? 'glass-nav border-wood-200/50 py-3 shadow-sm' 
-          : 'bg-transparent border-transparent py-6'
-      }`}
+      className={`fixed w-full z-50 transition-all duration-500 border-b ${getHeaderClass()}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -48,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
               onClick={(e) => handleLinkClick(e, 'domov')}
               className={`font-serif text-2xl font-bold tracking-tighter flex items-center gap-2 group`}
             >
-              <span className={`text-3xl transition-colors duration-300 ${isDarkHeader ? 'text-wood-900' : 'text-white'}`}>
+              <span className={`text-3xl transition-colors duration-300 ${isDarkText ? 'text-wood-900' : 'text-white'}`}>
                 MK Mizarstvo Kosi
               </span>
             </a>
@@ -62,11 +67,15 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
                 href={`#${link.href}`}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-sm font-medium tracking-wide uppercase transition-all duration-300 relative group ${
-                  isDarkHeader ? 'text-wood-800' : 'text-white/90 hover:text-white'
+                  isDarkText ? 'text-wood-800' : 'text-white/90 hover:text-white'
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${activePage === link.href ? 'w-full bg-wood-600' : (isDarkHeader ? 'bg-wood-600' : 'bg-white')}`}></span>
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                  activePage === link.href 
+                    ? (isDarkText ? 'w-full bg-wood-600' : 'w-full bg-wood-300') // Use Gold accent for active link on dark bg
+                    : (isDarkText ? 'bg-wood-600' : 'bg-white')
+                }`}></span>
               </a>
             ))}
           </nav>
@@ -75,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 transition-colors ${isDarkHeader ? 'text-wood-900' : 'text-white'}`}
+              className={`p-2 transition-colors ${isDarkText ? 'text-wood-900' : 'text-white'}`}
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
