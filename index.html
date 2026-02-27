@@ -5,37 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mizarstvo Kosi - Pohištvo z dušo</title>
 
-    <!-- Tailwind CDN (OK za zdaj) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              wood: {
-                50: '#FAF9F6',
-                100: '#F5F1E8',
-                200: '#EBE5DA',
-                300: '#D4A373',
-                400: '#C08F71',
-                500: '#A67C52',
-                600: '#8C6239',
-                700: '#6B4C35',
-                800: '#4A3728',
-                900: '#271C19',
-                950: '#1A1210',
-              },
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-          },
-        },
-      };
-    </script>
-
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
       rel="stylesheet"
@@ -49,24 +18,10 @@
         font-family: 'Playfair Display', serif;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "lucide-react": "https://esm.sh/lucide-react@^0.575.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
-</head>
+  </head>
 
   <body class="bg-wood-50 text-wood-900 antialiased">
     <div id="root"></div>
-
-    <!-- ✅ PRAVILEN VITE ENTRY -->
-    <script type="module" src="index.tsx"></script>
-  <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
