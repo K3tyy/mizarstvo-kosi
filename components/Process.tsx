@@ -5,7 +5,7 @@ const Process: React.FC = () => {
   return (
     <section id="process" className="py-24 bg-wood-200 text-wood-900 relative overflow-hidden">
       {/* Subtle wood grain texture overlay */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
+      <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('/slike/wood-pattern.png')]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-16">
