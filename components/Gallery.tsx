@@ -15,7 +15,7 @@ const Gallery: React.FC<GalleryProps> = ({ isPreview = false, onViewAll }) => {
   // Scroll to top when switching categories inside full view
   useEffect(() => {
     if (!isPreview && !lightboxImageIndex) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }, [selectedCategory, isPreview, lightboxImageIndex]);
 

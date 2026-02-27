@@ -41,7 +41,7 @@ function App() {
 
   // Scroll to top whenever page changes
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [currentPage]);
 
   const navigateTo = (page: string) => {
@@ -55,7 +55,7 @@ function App() {
     }
 
     window.location.hash = page;
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleServiceClick = (serviceId: string) => {

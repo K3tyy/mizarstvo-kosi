@@ -21,7 +21,7 @@ const ServicesPage: React.FC<ServicesPageProps> = ({ initialServiceId }) => {
 
   // Scroll to top when switching views
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }, [selectedServiceId]);
 
   const selectedService = SERVICES.find(s => s.id === selectedServiceId);
