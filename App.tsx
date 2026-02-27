@@ -30,10 +30,19 @@ function App() {
     };
 
     window.addEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handlePopState); // Also listen for hash changes
     handlePopState(); // Check on load
 
-    return () => window.removeEventListener('popstate', handlePopState);
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handlePopState);
+    };
   }, []);
+
+  // Scroll to top whenever page changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [currentPage]);
 
   const navigateTo = (page: string) => {
     const validPage = page as PageType;
