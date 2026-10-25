@@ -53,8 +53,9 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, activePage }) => {
               onClick={(e) => handleLinkClick(e, 'domov')}
               className={`font-serif text-2xl font-bold tracking-tighter flex items-center gap-2 group`}
             >
-              <span className={`text-3xl transition-colors duration-300 ${isDarkText ? 'text-wood-900' : 'text-white'}`}>
-                MK Mizarstvo Kosi
+              <span className={`text-base sm:text-lg md:text-xl lg:text-2xl font-serif font-bold tracking-tight transition-colors duration-300 ${isDarkText ? 'text-wood-900' : 'text-white'}`}>
+                <span className="hidden xs:inline sm:inline">MK mizarstvo Kristjan Kosi d.o.o.</span>
+                <span className="sm:hidden xs:hidden">MKK d.o.o.</span>
               </span>
             </a>
           </div>

@@ -9,10 +9,7 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ onServiceClick }) => {
   return (
-    <section id="storitve" className="py-24 bg-wood-900 text-wood-100 relative">
-      {/* Texture Overlay */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('/slike/wood-pattern.png')]"></div>
-      
+    <section id="storitve" className="py-24 bg-wood-900 text-wood-100 relative">      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
           <div className="max-w-2xl">

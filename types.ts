@@ -1,11 +1,26 @@
 import { LucideIcon } from 'lucide-react';
 
+export interface Subcategory {
+  id: string;
+  title: string;
+  description: string;
+  benefits?: string[];
+}
+
+export interface SpecialNotice {
+  title: string;
+  description: string;
+  badge?: string;
+}
+
 export interface ServiceItem {
   id: string;
   title: string;
   description: string;
   fullDescription?: string; // For the detailed view
   benefits?: string[]; // List of benefits
+  subcategories?: Subcategory[];
+  specialNotice?: SpecialNotice;
   icon: LucideIcon;
   image: string;
 }
@@ -21,6 +36,7 @@ export interface ProjectImage {
   url: string;
   title: string;
   category: string;
+  subcategory?: string;
 }
 
 export interface ContactFormData {
